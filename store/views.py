@@ -74,3 +74,8 @@ def product(request):
 def detail_product(request, product_id):
     pro = Product.objects.get(pk=product_id)
     return render(request, 'store/detail_product.html', {'pro': pro})
+
+
+def payment(request):
+    all_payment = Payment.objects.all()
+    return render(request, 'store/payment.html', {'all_payment': all_payment})

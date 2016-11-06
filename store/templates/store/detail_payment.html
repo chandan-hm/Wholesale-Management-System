@@ -1,6 +1,10 @@
 {% load staticfiles %}
-<title>Producers - Wholesale Management System</title>
-
+<title>Payment Detail - Wholesale Management System</title>
+<style>
+	body {
+		background-image: {% static 'store/images/bg.jpg' %};
+    }
+</style>
 <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'store/css/bootstrap-select.css' %}">
 <link href="{% static 'store/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
@@ -12,26 +16,7 @@
     <script src="{% static 'store/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'store/js/bootstrap-select.js' %}"></script>
 
-<style>
-	body {
-		background-image: url({% static 'store/images/bg.jpg' %});
-    }
-    .white_bg
-    {
-    background-color: #ffffff;
-    padding: 3px; /*add this if you want a bit of space around the text*/
-    }
-</style>
-
-
 
 <br>
-
-<h2 style="color: #7a47ff" class="white_bg">The list of Producers:</h2>
-<br>
-<ol>
-    {% for producer in all_producers %}
-    <li><a href="/producer/{{ producer.id }}" class="white_bg">{{ producer.prname }}</a></li>
-    {% endfor %}
-</ol>
-
+<h2>Payment:</h2>
+<h3>{{ pay.paymentid }} - {{ pay.bankname }} - {{ pay.cardno }} - {{ pay.receiptno.cart.pid }}</h3>

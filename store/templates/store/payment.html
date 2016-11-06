@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<title>Producers - Wholesale Management System</title>
+<title>Payment - Wholesale Management System</title>
 
 <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'store/css/bootstrap-select.css' %}">
@@ -16,22 +16,17 @@
 	body {
 		background-image: url({% static 'store/images/bg.jpg' %});
     }
-    .white_bg
-    {
-    background-color: #ffffff;
-    padding: 3px; /*add this if you want a bit of space around the text*/
-    }
 </style>
 
-
+<body>
 
 <br>
 
-<h2 style="color: #7a47ff" class="white_bg">The list of Producers:</h2>
+<h2 style="color: #7a47ff">The list of Payments:</h2>
 <br>
 <ol>
-    {% for producer in all_producers %}
-    <li><a href="/producer/{{ producer.id }}" class="white_bg">{{ producer.prname }}</a></li>
+    {% for payment in all_payment %}
+    <li>{{ payment.paymentid }} - {{ payment.bankname }} - {{ payment.cardno }} - {{ payment.receiptno.cart.cartno }}</li>
     {% endfor %}
 </ol>
-
+</body>

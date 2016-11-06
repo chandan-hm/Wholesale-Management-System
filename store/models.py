@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 
 
 # Create your models here.
@@ -41,17 +42,16 @@ class Phonecus(models.Model):
         return self.cid.cname + " - " + self.phoneno
 
 
+class Receipt(models.Model):
+    receiptid = models.IntegerField()
+
+
 class Cart(models.Model):
-    cartno = models.IntegerField()
+    cartno = models.ForeignKey(Receipt, on_delete=models.CASCADE)
     pid = models.ForeignKey(Product)
 
     def __str__(self):
         return ((str)(self.cartno) + " - " + self.pid.pname)
-
-
-class Receipt(models.Model):
-    cartno = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    totalamt = models.FloatField()
 
 
 class Payment(models.Model):

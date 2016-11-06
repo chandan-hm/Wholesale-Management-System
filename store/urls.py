@@ -20,5 +20,7 @@ urlpatterns = [
 
     url(r'^product$', views.product, name='product'),
 
-    url(r'^product/(?P<product_id>[0-9]+)/$', views.detail_product, name='detail_category'),
+    url(r'^product/(?P<product_id>[0-9]+)/$', views.detail_product, name='detail_product'),
+
+    url(r'^payment$', views.payment, name='payment'),
 ]
