@@ -16,12 +16,15 @@
 	body {
 		background-image: url({% static 'store/images/bg.jpg' %});
     }
+     .white_bg
+    {
+    background-color: #ffffff;
+    padding: 3px; /*add this if you want a bit of space around the text*/
+    }
 </style>
-
-<body>
-
 <br>
-
+<div class="white_bg">
+<br>
 <h2 style="color: #7a47ff">The list of Customers:</h2>
 <br>
 <ol>
@@ -29,4 +32,4 @@
     <li><a href="/customer/{{ customer.id }}">{{ customer.cname }}</a></li>
     {% endfor %}
 </ol>
-</body>
+</div>

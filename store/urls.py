@@ -4,7 +4,7 @@ from . import views
 app_name = 'store'
 
 urlpatterns = [
-    url(r'^$', views.login, name='login'),
+    url(r'^$', views.login_user, name='login'),
 
     url(r'^register/$', views.UserFormView.as_view(), name='register'),
 
@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^product/(?P<product_id>[0-9]+)/$', views.detail_product, name='detail_product'),
 
     url(r'^payment$', views.payment, name='payment'),
+
+    url(r'^billing$', views.billing, name='billing'),
 ]

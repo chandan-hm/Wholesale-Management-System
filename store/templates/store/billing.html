@@ -1,6 +1,10 @@
 {% load staticfiles %}
-<title>Payment - Wholesale Management System</title>
-
+<title>Billing - Wholesale Management System</title>
+<style>
+	body {
+		background-image: {% static 'store/images/bg.jpg' %};
+    }
+</style>
 <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'store/css/bootstrap-select.css' %}">
 <link href="{% static 'store/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
@@ -12,23 +16,29 @@
     <script src="{% static 'store/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'store/js/bootstrap-select.js' %}"></script>
 
-<style>
-	body {
-		background-image: url({% static 'store/images/bg.jpg' %});
-    }
-     .white_bg
-    {
-    background-color: #ffffff;
-    padding: 3px; /*add this if you want a bit of space around the text*/
-    }
-</style>
+
 <br>
-<div class="white_bg">
-<h2 style="color: #7a47ff" class="white_bg">The list of Payments:</h2>
-<br>
-<ol>
-    {% for payment in all_payment %}
-    <li>{{ payment.paymentid }} - {{ payment.bankname }} - {{ payment.cardno }} - {{ payment.receiptno.cart.cartno }}</li>
-    {% endfor %}
-</ol>
-</div>
+<h2>Cart:</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Sl.No.</th>
+      <th>Product Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for cart in all_cart %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ cart.pid.pname }}</td>
+      <td>{{ cart.pid.category }}</td>
+      <td>{{ cart.pid.quantity }}</td>
+      <td>{{ cart.pid.price }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+Total - {{ totalamt }}

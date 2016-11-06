@@ -2,11 +2,23 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views.generic import View
 from .forms import UserForm
+from django.db.models import Sum
 from store.models import Producer, Payment, Phoneprod, Phonecus, Pays, Product, Receipt, Customer, Cart, Sells, Buys
 
 
-def login(request):
-
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return render(request, 'store/index.html')
+            else:
+                return render(request, 'store/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'store/login.html', {'error_message': 'Invalid login'})
     return render(request, 'store/login.html')
 
 
@@ -50,7 +62,6 @@ class UserFormView(View):
 
                 if user.is_active:
 
-                    login(request, user)
                     return redirect('store:index')
 
             return render(request, self.template_name, {'form': form})
@@ -79,3 +90,8 @@ def detail_product(request, product_id):
 def payment(request):
     all_payment = Payment.objects.all()
     return render(request, 'store/payment.html', {'all_payment': all_payment})
+
+
+def billing(request):
+    all_cart = Cart.objects.all()
+    return render(request, 'store/billing.html', {'all_cart': all_cart})

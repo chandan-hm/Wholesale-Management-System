@@ -23,15 +23,15 @@
     }
 </style>
 
-
-
+<br>
+<div class="white_bg">
 <br>
 
-<h2 style="color: #7a47ff" class="white_bg">The list of Producers:</h2>
+<h2 style="color: #7a47ff">The list of Producers:</h2>
 <br>
 <ol>
     {% for producer in all_producers %}
-    <li><a href="/producer/{{ producer.id }}" class="white_bg">{{ producer.prname }}</a></li>
+    <li><a href="/producer/{{ producer.id }}">{{ producer.prname }}</a></li>
     {% endfor %}
 </ol>
-
+</div>

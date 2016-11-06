@@ -16,10 +16,14 @@
 	body {
 		background-image: url({% static 'store/images/bg.jpg' %});
     }
+    .white_bg
+    {
+    background-color: #ffffff;
+    padding: 3px; /*add this if you want a bit of space around the text*/
+    }
 </style>
-
-<body>
-
+<br>
+<div class="white_bg">
 <br>
 
 <h2 style="color: #7a47ff">The list of Products:</h2>
@@ -29,4 +33,4 @@
     <li><a href="/product/{{ product.id }}">{{ product.pname }} - {{ product.category }}</a></li>
     {% endfor %}
 </ol>
-</body>
+</div>
