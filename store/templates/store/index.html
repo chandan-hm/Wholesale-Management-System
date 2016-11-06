@@ -1,0 +1,193 @@
+
+
+<html>
+<head>
+<title>Wholesale Management System</title>
+    {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'store/css/bootstrap-select.css' %}">
+<link href="{% static 'store/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'store/css/flexslider.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{% static 'store/css/font-awesome.min.css' %}" />
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="{% static 'store/js/jquery.min.js' %}"></script>
+    <script src="{% static 'store/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'store/js/bootstrap-select.js' %}"></script>
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+<script type="text/javascript" src="{% static 'store/js/jquery.leanModal.min.js' %}"></script>
+<link href="{% static 'store/css/jquery.uls.css' %}" rel="stylesheet"/>
+<link href="{% static 'store/css/jquery.uls.grid.css' %}" rel="stylesheet"/>
+<link href="{% static 'store/css/jquery.uls.lcd.css' %}" rel="stylesheet"/>
+<script src="{% static 'store/js/jquery.uls.data.js' %}"></script>
+<script src="{% static 'store/js/jquery.uls.data.utils.js' %}"></script>
+<script src="{% static 'store/js/jquery.uls.lcd.js' %}"></script>
+<script src="{% static 'store/js/jquery.uls.languagefilter.js' %}"></script>
+<script src="{% static 'store/js/jquery.uls.regionfilter.js' %}"></script>
+<script src="{% static 'store/js/jquery.uls.core.js' %}"></script>
+
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="{% url 'store:index' %}"><span>Wholesale Management System</span></a>
+			</div>
+
+		</div>
+		</div>
+	</div>
+	<div class="main-banner banner text-center">
+	  <div class="container">
+			<h1> Anything and Everything  <span class="segment-heading"> for Customers </span></h1>
+			<p>Whoever said money can't buy happiness simply didn't know where to go shopping</p>
+	  </div>
+	</div>
+
+		<div class="content">
+			<div class="categories">
+				<div class="container">
+					<div class="col-md-2 focus-grid">
+						<a href="{% url 'store:product' %}">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-mobile"></i></div>
+									<h4 class="clrchg">Products</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="{% url 'store:customer' %}">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-laptop"></i></div>
+									<h4 class="clrchg"> Customer</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="{% url 'store:producer' %}">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-building"></i></div>
+									<h4 class="clrchg">Producer</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2 focus-grid">
+						<a href="categories.html#parentVerticalTab4">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-money"></i></div>
+									<h4 class="clrchg">Payment</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-2 focus-grid">
+						<a href="categories.html#parentVerticalTab4">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image"><i class="fa fa-money"></i></div>
+									<h4 class="clrchg">Billing</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+								</li>
+						</ul>
+
+					   <script type="text/javascript" src="{% static 'store/js/jquery.flexisel.js' %}"></script>
+					</div>
+			</div>
+			</div>
+
+
+		<footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="foo-grids">
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Who We Are</h4>
+							<p>Wholesale dealers who are ever ready to serve our customers, anytime, anywhere.</p>
+							<p>Distributing smile amd happiness among people since origin :)  </p>
+						</div>
+
+
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Contact Us</h4>
+							<span class="hq">Our headquarters</span>
+							<address>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-map-marker"></span></li>
+									<li>NITK SURATHKAL CSE</li>
+									<div class="clearfix"></div>
+								</ul>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-earphone"></span></li>
+									<li>+919611537870/+918762526578</li>
+									<div class="clearfix"></div>
+								</ul>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-envelope"></span></li>
+									<li><a href="mailto:chanhiremath2aug96@gmail.com">wms@gmail.com</a></li>
+									<div class="clearfix"></div>
+								</ul>
+							</address>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="footer-logo">
+					<a href="{% url 'store:index' %}"><span>Wholesale Management System</span></a>
+				</div>
+				<div class="footer-social-icons">
+					<ul>
+						<li><a class="facebook" href="https://www.facebook.com/chanhiremath"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+					</ul>
+				</div>
+				<div class="copyrights">
+					<p> © 2016 WMS. All Rights Reserved | Design by 14CO111,14CO122,14CO147</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</footer>
+
+</body>
+</html>
